@@ -2,6 +2,7 @@
 MTK.get_iv(me::AbstractMeanfieldEquations) = me.iv
 MTK.unknowns(me::AbstractMeanfieldEquations) = me.states
 
+#test comment
 function MTK.equations(me::AbstractMeanfieldEquations)
     # Get the MTK variables
     varmap = me.varmap
@@ -58,7 +59,7 @@ function MTK.ODESystem(me::AbstractMeanfieldEquations, iv=me.iv;
         kwargs...)
     eqs = MTK.equations(me)
     sys = MTK.ODESystem(eqs, iv; kwargs...)
-    return complete_sys ? complete(sys) : sys
+    return complete_sys ? complete(sys) : sys 
 end
 
 const AbstractIndexedMeanfieldEquations = Union{IndexedMeanfieldEquations,EvaledMeanfieldEquations}
